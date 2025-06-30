@@ -7,6 +7,7 @@ public class ItemManager : MonoBehaviour
 {
     [Header("Item Slot")]
     [SerializeField] public Item tempItem;
+    public string itemList;
     [SerializeField] public static List<Item> _items = new List<Item>();
 
     [Header("Stats")]
@@ -20,6 +21,12 @@ public class ItemManager : MonoBehaviour
     public float hpMulti = 1f;
     public float attackSpeedMulti = 1f;
 
+    private void FixedUpdate()
+    {
+        itemList = $"{_items}";
+    }
+
+    #region Compile Items
     public void CompileItems()
     {
         float tempSpeed = 1f;
@@ -62,4 +69,11 @@ public class ItemManager : MonoBehaviour
         hpMulti = tempHP;
         attackSpeedMulti = tempAtkSpeed;
     }
+    #endregion // Calculate Items
+
+    
+
+
+
+
 }

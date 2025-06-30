@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum RarityType
@@ -22,8 +23,11 @@ public class Item : ScriptableObject
     [SerializeField] public string itemName;
     [SerializeField] public string itemDesc;
     [SerializeField] public Sprite itemSprite;
+
     public RarityType Rarity;
     public GrowthCurve GrowthCurve;
+
+    [Range(1, 100)] public float dropChance;
 
     [Header("Player Stats")]
     [SerializeField] public float HP;
