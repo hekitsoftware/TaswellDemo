@@ -56,5 +56,10 @@ public class ItemManager : MonoBehaviour
                     break;
             }
         }
+
+        moveSpeedMulti = tempSpeed;
+        dmgMulti = tempDMG;
+        hpMulti = tempHP;
+        attackSpeedMulti = tempAtkSpeed;
     }
 }
