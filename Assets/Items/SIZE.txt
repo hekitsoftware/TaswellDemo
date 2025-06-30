@@ -1,3 +1,5 @@
 size = 500%
 
 10x10 grid in a 12x12 canvas for rarity outline
+
+US18741 Grind: Day 1/5

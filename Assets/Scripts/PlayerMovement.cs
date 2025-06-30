@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && IsGrounded())
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, (jumpPower * _iManager.jumpForce));
         }
         else
         {

@@ -34,6 +34,7 @@ public class Item : ScriptableObject
     [SerializeField] public float SPEED;
     [SerializeField] public float DMG;
     [SerializeField] public float atkSPEED;
+    [SerializeField] public float JumpBalance;
 
     [Header("World Stats")]
     [SerializeField] public float PowerTime;

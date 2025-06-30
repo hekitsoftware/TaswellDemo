@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDesc: Halves both Charge Time AND Player Health
   itemSprite: {fileID: 21300000, guid: 03db86a8b18e93b4eacc01474b775ce1, type: 3}
   Rarity: 3
-  GrowthCurve: 0
+  GrowthCurve: 1
   dropChance: 100
   HP: 0.5
   SPEED: 0
