@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 9f02461142387dc45b2c14bc10f1487d
+guid: 3965eff34acd93d4187d047835afa27b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 275772617612231443
-    second: Taswell_Idle_0
-  - first:
-      213: 7173998500621671701
-    second: Taswell_Idle_1
-  - first:
-      213: -787557709194533490
-    second: Taswell_Idle_2
-  - first:
-      213: 1667541281558196195
-    second: Taswell_Idle_3
+      213: -9001338887307214607
+    second: ITM_BanditBandana_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,7 +73,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Taswell_Idle_0
+      name: ITM_BanditBandana_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 48
-        height: 96
+        y: 4
+        width: 60
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3138e8f0cbdb3d300800000000000000
-      internalID: 275772617612231443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Taswell_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51d5db870a92f8360800000000000000
-      internalID: 7173998500621671701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Taswell_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e85e657af680215f0800000000000000
-      internalID: -787557709194533490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Taswell_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3ef6397e5fb442710800000000000000
-      internalID: 1667541281558196195
+      spriteID: 1f0c42f19f1d41380800000000000000
+      internalID: -9001338887307214607
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9bc7b8cbaa9c9b8419ee44d8f05d1ac9
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Taswell_Idle_0: 275772617612231443
-      Taswell_Idle_1: 7173998500621671701
-      Taswell_Idle_2: -787557709194533490
-      Taswell_Idle_3: 1667541281558196195
+      ITM_BanditBandana_0: -9001338887307214607
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

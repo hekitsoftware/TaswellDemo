@@ -4,32 +4,27 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
+    [SerializeField] public ItemManager _iManager;
+
     [SerializeField] public GameObject _player;
+    [SerializeField] public Animator _anim;
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] public Transform groundCheck;
     [SerializeField] public LayerMask groundLayer;
 
-    [Header("Stats")]
-    [SerializeField] public float DMG = 5f;
-    [SerializeField] public float HP = 100f;
-    [SerializeField] public float attackSPEED = 100f;
-    [SerializeField] public float moveSpeed = 10f;
-
     [Header("Movement")]
+    [SerializeField] public float moveSpeed;
     [SerializeField] public float accSpeed = 10f;
     [SerializeField] public float decSpeed = 8f;
     [SerializeField] public float velPower = 1f;
+    private float speedMulti;
 
     [SerializeField] public float jumpPower = 1f;
-    [SerializeField] public bool GD;
+    [SerializeField] public bool GD; //isGrounded
+    [SerializeField] public bool IM; //IsMoving
+    [SerializeField] public bool IF; //isFalling
 
     public bool isFacingRight = true;
-
-    [Header("Item Multipliers")]
-    public float moveSpeedMulti = 1f;
-    public float dmgMulti = 1f;
-    public float hpMulti = 1f;
-    public float attackSpeedMulti = 1f;
 
     private float moveInput;
 
@@ -39,10 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
         // Get raw horizontal input (-1 BACKWARD, 0 NULL, or 1 FORWARD)
         moveInput = Input.GetAxisRaw("Horizontal"); //ASWD
+
         GD = IsGrounded();
 
         #region Running
-        float targetSpeed = (moveInput * moveSpeed) * moveSpeedMulti;
+        float targetSpeed = (moveInput * moveSpeed) * speedMulti;
         // Calculate the diff between current-velocity and peak speed
         float speedDif = targetSpeed - rb.linearVelocity.x;
         // Choose acce or dec depending on whether the player is moving or stopping
@@ -56,9 +52,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        speedMulti = _iManager.moveSpeedMulti;
         Jump();
+
+        //X
+        if (moveInput != 0)
+        {
+            IM = true;
+        }
+        else if (moveInput == 0) { IM = false; }
+
+        //Y
+        if (rb.linearVelocityY != 0)
+        {
+            IF = true;
+        }
+        else if (rb.linearVelocityY == 0) { IF = false; }
+
+        _anim.SetBool("IsMoving", IM);
+        _anim.SetBool("IsFalling", IF);
+
     }
 
+    #region Movement
     public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
@@ -94,4 +110,6 @@ public class PlayerMovement : MonoBehaviour
             isFacingRight = !isFacingRight;
         }
     }
+
+    #endregion
 }

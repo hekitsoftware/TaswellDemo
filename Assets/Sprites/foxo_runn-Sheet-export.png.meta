@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 7f9b40196a32d924e9646dea74ac77b6
+guid: 530858a14cc005741a70d0ab95f04103
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1746532598686527547
-    second: Taswell_Run_0
+      213: 8115048181290439175
+    second: foxo_runn-Sheet-export_0
   - first:
-      213: -4503548491772137222
-    second: Taswell_Run_1
+      213: 7611687351226817358
+    second: foxo_runn-Sheet-export_1
   - first:
-      213: 8674555056106126738
-    second: Taswell_Run_2
+      213: 4978823654660628392
+    second: foxo_runn-Sheet-export_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -79,9 +79,9 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Taswell_Run_0
+      name: foxo_runn-Sheet-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 512
+        width: 112
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cf46a2ead113c7e0800000000000000
-      internalID: -1746532598686527547
+      spriteID: 7021ff453517e9070800000000000000
+      internalID: 8115048181290439175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taswell_Run_1
+      name: foxo_runn-Sheet-export_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 112
         y: 0
-        width: 256
-        height: 512
+        width: 112
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af0fc2fe18e2081c0800000000000000
-      internalID: -4503548491772137222
+      spriteID: e4b5537415522a960800000000000000
+      internalID: 7611687351226817358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taswell_Run_2
+      name: foxo_runn-Sheet-export_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 224
         y: 0
-        width: 256
-        height: 512
+        width: 112
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 29d36cf1dd5326870800000000000000
-      internalID: 8674555056106126738
+      spriteID: 8afdb572cb5581540800000000000000
+      internalID: 4978823654660628392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Taswell_Run_3
+      name: foxo_runn-Sheet-export_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 336
         y: 0
-        width: 256
-        height: 512
+        width: 112
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ec980d70578a524ba5a26298490b45b
-      internalID: -1976909865
+      spriteID: eabf55c524441a644a3ac05649d7cf28
+      internalID: 1496332852
       vertices: []
       indices: 
       edges: []
@@ -210,7 +210,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2ec9676c76eb8c54f862e6b4008e5a46
+    spriteID: 073f4c82740ddb143a3a24159b435a56
     internalID: 0
     vertices: []
     indices: 
@@ -220,10 +220,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Taswell_Run_0: -1746532598686527547
-      Taswell_Run_1: -4503548491772137222
-      Taswell_Run_2: 8674555056106126738
-      Taswell_Run_3: -1976909865
+      foxo_runn-Sheet-export_0: 8115048181290439175
+      foxo_runn-Sheet-export_1: 7611687351226817358
+      foxo_runn-Sheet-export_2: 4978823654660628392
+      foxo_runn-Sheet-export_3: 1496332852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
