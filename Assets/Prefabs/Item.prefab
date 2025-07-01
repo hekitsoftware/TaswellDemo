@@ -53,7 +53,7 @@ MonoBehaviour:
   rend: {fileID: 3378713022462376780}
   zone: {fileID: 7983422284418221963}
   aSrc: {fileID: 4234590764448940753}
-  playerItemMan: {fileID: 0}
+  playerItemMan: {fileID: 7659179785663510293, guid: 75873b4491bebb74d89bc1c6de512209, type: 3}
   chestScript: {fileID: 0}
   chest: {fileID: 0}
   player: {fileID: 0}
@@ -211,7 +211,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 83ea5729e09ce2f43be61f416b4a71cf, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
