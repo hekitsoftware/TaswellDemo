@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] public ItemManager _iManager;
+    [SerializeField] public SceneManager _sManager;
 
     [SerializeField] public GameObject _player;
     [SerializeField] public Animator _anim;
@@ -37,17 +38,17 @@ public class PlayerMovement : MonoBehaviour
 
         GD = IsGrounded();
 
-        #region Running
-        float targetSpeed = (moveInput * moveSpeed) * speedMulti;
-        // Calculate the diff between current-velocity and peak speed
-        float speedDif = targetSpeed - rb.linearVelocity.x;
-        // Choose acce or dec depending on whether the player is moving or stopping
-        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? accSpeed : decSpeed;
-        // Apply exponential force scaling for nicer acceleration curves
-        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
+            #region Running
+            float targetSpeed = (moveInput * moveSpeed) * speedMulti;
+            // Calculate the diff between current-velocity and peak speed
+            float speedDif = targetSpeed - rb.linearVelocity.x;
+            // Choose acce or dec depending on whether the player is moving or stopping
+            float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? accSpeed : decSpeed;
+            // Apply exponential force scaling for nicer acceleration curves
+            float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
 
-        rb.AddForce((movement * Vector2.right));
-        #endregion
+            rb.AddForce((movement * Vector2.right));
+            #endregion
     }
 
     private void Update()
@@ -82,19 +83,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, (jumpPower * _iManager.jumpForce));
-        }
-        else
-        {
-            return;
-        }
+            if (Input.GetKey(KeyCode.Space) && IsGrounded())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, (jumpPower * _iManager.jumpForce));
+            }
+            else
+            {
+                return;
+            }
 
-        if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocityY > 0f)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocityY * 0.5f);
-        }
+            if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocityY > 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocityY * 0.5f);
+            }
     }
 
     public void Flip()
