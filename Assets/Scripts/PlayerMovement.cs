@@ -63,11 +63,11 @@ public class PlayerMovement : MonoBehaviour
         else if (moveInput == 0) { IM = false; }
 
         //Y
-        if (rb.linearVelocityY != 0)
+        if (!GD && rb.linearVelocityY != 0)
         {
             IF = true;
         }
-        else if (rb.linearVelocityY == 0) { IF = false; }
+        else { IF = false; }
 
         _anim.SetBool("IsMoving", IM);
         _anim.SetBool("IsFalling", IF);
