@@ -24,6 +24,7 @@ public class BatteryScript : MonoBehaviour
         //Init Variables
         _circleCollider = _battery.GetComponent<CircleCollider2D>();
         _sManager = _sceneManagerObject.GetComponent<SceneManager>();
+        anim = _battery.GetComponent<Animator>();
 
         isDead = true;
         isCharging = false;
@@ -38,7 +39,6 @@ public class BatteryScript : MonoBehaviour
             {
                 if ((isDead && !isCharging && !isActive) && Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("Attepted to Activate BATTERYS");
                     Charge();
                 }
             }
@@ -49,7 +49,7 @@ public class BatteryScript : MonoBehaviour
         isDead = false;
         isCharging = true;
         anim.SetBool("C_Started", true);
-        StartCoroutine(CountdownCoroutine(60f));
+        StartCoroutine(CountdownCoroutine(countdownTime));
     }
     //Timer
 

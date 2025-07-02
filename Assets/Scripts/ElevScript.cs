@@ -50,4 +50,15 @@ public class ElevScript : MonoBehaviour
             self.transform.position = new Vector3 (transform.position.x, transform.position.y, 0f);
         } else { self.transform.position = new Vector3(transform.position.x, transform.position.y, 1f); }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Debug.Log($"{this} Trigger senses something");
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log($"{this} Trigger senses PLAYER");
+            hasPassenger = true;
+        }
+        else { hasPassenger = false; }
+    }
 }

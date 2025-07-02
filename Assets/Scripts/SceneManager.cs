@@ -33,6 +33,8 @@ public class SceneManager : MonoBehaviour
         //Grab the scripts
         elevScript = EntrancePrefab.GetComponent<ElevScript>();
         exitElevScript = ExitPrefab.GetComponent<ElevScript>();
+        _iManager = Player.GetComponent<ItemManager>();
+        batteryScript = Battery.GetComponent<BatteryScript>();
 
         //Initialise all level-variables
         exitElevatorIsCharged = false;
@@ -56,11 +58,18 @@ public class SceneManager : MonoBehaviour
             playerIsLocked = false;
         }
 
-        LeaveStage();
+        if (!isLeaving && exitElevatorIsCharged && exitElevScript.hasPassenger && Input.GetKey(KeyCode.E))
+        {
+            LeaveStage();
+        }
 
         if (batteryScript.isActive)
         {
             exitElevatorIsCharged = true;
+            if (!isLeaving)
+            {
+                exitElevScript.isExitClosing = false;
+            }
         } else { exitElevatorIsCharged = false; }
     }
 
@@ -72,10 +81,9 @@ public class SceneManager : MonoBehaviour
 
     public void LeaveStage()
     {
-        if (exitElevatorIsCharged && exitElevScript.hasPassenger && Input.GetKey(KeyCode.E))
-        {
-            isLeaving = true;
-            exitElevScript.isExitClosing = true;
-        }
+        playerIsLocked = true;
+        isLeaving = true;
+        exitElevScript.isExitClosing = true;
+        playerIsLocked = true;
     }
 }

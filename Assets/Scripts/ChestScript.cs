@@ -40,7 +40,6 @@ public class ChestScript : MonoBehaviour
     //Roll random number + Choose an item to spit out
     Item GetDroppedItem()
     {
-        Debug.Log($"Roll Started");
         int randomeNumb = Random.Range(1, 101);
         List<Item> possibleItems = new List<Item>();
         foreach (Item item in itemPool)
@@ -49,14 +48,12 @@ public class ChestScript : MonoBehaviour
             {
                 possibleItems.Add(item);
             }
-            Debug.Log($"{possibleItems}");
         }
         if(possibleItems.Count > 0)
         {
             Item droppedItem = possibleItems[Random.Range(0, possibleItems.Count)];
             return droppedItem;
         }
-        Debug.Log("No Items");
         return null;
     }
 

@@ -24,16 +24,10 @@ public class ItemObject : MonoBehaviour
             if (rend != null)
                 rend.sprite = item.itemSprite;
         }
-        else
-        {
-            Debug.LogWarning("ChestScript or chestItem is missing!");
-        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Something touched the item");
-
         if (collision.CompareTag("Player") && playerItemMan != null)
         {
             playerItemMan = collision.GetComponent<ItemManager>();
