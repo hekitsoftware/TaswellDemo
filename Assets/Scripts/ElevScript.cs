@@ -53,10 +53,8 @@ public class ElevScript : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log($"{this} Trigger senses something");
         if (other.CompareTag("Player"))
         {
-            Debug.Log($"{this} Trigger senses PLAYER");
             hasPassenger = true;
         }
         else { hasPassenger = false; }

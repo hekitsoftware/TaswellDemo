@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering;
 
 public class BatteryScript : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class BatteryScript : MonoBehaviour
     public CircleCollider2D _circleCollider;
     public SceneManager _sManager;
     public Animator anim;
+    public AudioSource chuggington; //Generator Sound
 
     //Timer Stuff
     public float countdownTime = 60f; // seconds
@@ -25,6 +27,7 @@ public class BatteryScript : MonoBehaviour
         _circleCollider = _battery.GetComponent<CircleCollider2D>();
         _sManager = _sceneManagerObject.GetComponent<SceneManager>();
         anim = _battery.GetComponent<Animator>();
+        chuggington = _battery.GetComponent<AudioSource>();
 
         isDead = true;
         isCharging = false;
@@ -49,6 +52,7 @@ public class BatteryScript : MonoBehaviour
         isDead = false;
         isCharging = true;
         anim.SetBool("C_Started", true);
+        chuggington.Play();
         StartCoroutine(CountdownCoroutine(countdownTime));
     }
     //Timer
@@ -64,8 +68,6 @@ public class BatteryScript : MonoBehaviour
             yield return null; // wait one frame
             timeLeft -= Time.deltaTime;
         }
-
-        Debug.Log("Time's up!");
 
         anim.SetBool("C_Started", false);
         anim.SetBool("C_Finished", true);
