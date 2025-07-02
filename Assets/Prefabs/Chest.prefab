@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4744313603600188791
+--- !u!1 &5821060532244105274
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1220913269486078842}
-  - component: {fileID: 1866901220124668339}
-  - component: {fileID: 2619432674004933449}
-  - component: {fileID: 2499017161317301393}
-  - component: {fileID: 6882523666783382949}
-  - component: {fileID: 2089642034242341345}
+  - component: {fileID: 85247131474675492}
+  - component: {fileID: 7569075535169577499}
+  - component: {fileID: 4676530182265479731}
+  - component: {fileID: 6374483274986649324}
+  - component: {fileID: 1319634647690781435}
+  - component: {fileID: 415810608514387913}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -21,28 +21,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1220913269486078842
+--- !u!4 &85247131474675492
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744313603600188791}
+  m_GameObject: {fileID: 5821060532244105274}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.14, y: 0.74, z: 0.05687566}
-  m_LocalScale: {x: 0.6576916, y: 0.6576916, z: 0.6576916}
+  m_LocalPosition: {x: -11.589195, y: 3.411796, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1866901220124668339
+--- !u!212 &7569075535169577499
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744313603600188791}
+  m_GameObject: {fileID: 5821060532244105274}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -91,14 +91,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2619432674004933449
+--- !u!95 &4676530182265479731
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744313603600188791}
+  m_GameObject: {fileID: 5821060532244105274}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 585de47bde52d0743be414d1e29fb14a, type: 2}
@@ -113,13 +113,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &2499017161317301393
+--- !u!61 &6374483274986649324
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744313603600188791}
+  m_GameObject: {fileID: 5821060532244105274}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -159,40 +159,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.552388, y: 1.7042615}
   m_EdgeRadius: 0
---- !u!114 &6882523666783382949
+--- !u!114 &1319634647690781435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744313603600188791}
+  m_GameObject: {fileID: 5821060532244105274}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc6aa69d1055f864d962dcf2bb7cb68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chestItem: {fileID: 0}
-  chest: {fileID: 4744313603600188791}
-  chestAnim: {fileID: 2619432674004933449}
-  triggerBox: {fileID: 2499017161317301393}
+  chest: {fileID: 5821060532244105274}
+  chestAnim: {fileID: 4676530182265479731}
+  triggerBox: {fileID: 6374483274986649324}
   hasBeenActivated: 0
   isOpen: 0
-  open_sfx: {fileID: 2089642034242341345}
+  open_sfx: {fileID: 415810608514387913}
   droppedItemPrefab: {fileID: 8803790627519158158, guid: d2828382b9660b04f866a6486cd7baad, type: 3}
-  _player: {fileID: 436794530709204270, guid: 75873b4491bebb74d89bc1c6de512209, type: 3}
+  _player: {fileID: 971602111516861022, guid: 841c2a534ef70d946b4dcb7b516d7548, type: 3}
   itemobj: {fileID: 6481119583436553851, guid: d2828382b9660b04f866a6486cd7baad, type: 3}
   itemPool:
   - {fileID: 11400000, guid: ff56377ebb1582c49a87d3def3ee6dd2, type: 2}
   - {fileID: 11400000, guid: daec17ea36aa4eb419f37f7b78cb94f2, type: 2}
   - {fileID: 11400000, guid: 3372c0abb77f364468dbd5713dadd9f4, type: 2}
   - {fileID: 11400000, guid: b6b2346ea01d32e4bb2b616bfdd8ecfb, type: 2}
---- !u!82 &2089642034242341345
+--- !u!82 &415810608514387913
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4744313603600188791}
+  m_GameObject: {fileID: 5821060532244105274}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}

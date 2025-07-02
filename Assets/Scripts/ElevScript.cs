@@ -1,60 +1,53 @@
 using UnityEngine;
 
+public enum ElevatorType
+{
+    Entrance,
+    Exit
+}
+
+public enum Direction
+{
+    Up,
+    Down,
+}
+
 public class ElevScript : MonoBehaviour
 {
-    [SerializeField] public bool isExit;
+    [Header("Dependant Variables")]
+    [SerializeField] public ElevatorType eType;
+    [SerializeField] public Direction eDirection;
     [SerializeField] public GameObject self;
     [SerializeField] public BoxCollider2D playerDetection;
 
     public Animator anim;
     public SceneManager sceneManager;
-    public bool hasPassenger;
 
-    public bool isLitirallyClosed;
+    public bool hasPassenger;
+    public bool isTransitioning;
+
+    public bool isClosing;
+    public bool isExitClosing;
 
     private void Update()
     {
-        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Elev_Closed"))
+        if(sceneManager.isEntering || sceneManager.isLeaving)
         {
-            isLitirallyClosed = true;
-            playerDetection.enabled = false;
+            isTransitioning = true;
+        } else { isTransitioning = false; }
+
+        switch(eType){
+            case ElevatorType.Entrance:
+                anim.SetBool("IsClosed", isClosing);
+                break;
+            case ElevatorType.Exit:
+                anim.SetBool("IsClosed", isExitClosing);
+                break;
         }
 
-        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Elev_Open"))
+        if (isTransitioning)
         {
-            isLitirallyClosed = false;
-            playerDetection.enabled = true;
-        }
-
-        if (hasPassenger)
-        {
-            self.transform.position = new Vector3(0, 0, -3);
-        }
-        else { self.transform.position = new Vector3(0, 0, 0); }
-
-        if (isExit)
-        {
-            if (sceneManager.exitElevatorIsCharged)
-            {
-                anim.SetBool("IsClosed", false);
-            }
-            else { anim.SetBool("IsClosed", true); }
-        }
-        if (!isExit)
-        {
-            if (sceneManager.ElevatorIsCharged)
-            {
-                anim.SetBool("IsClosed", false);
-            }
-            else { anim.SetBool("IsClosed", true); }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            hasPassenger = true;
-        }
+            self.transform.position = new Vector3 (transform.position.x, transform.position.y, 0f);
+        } else { self.transform.position = new Vector3(transform.position.x, transform.position.y, 1f); }
     }
 }

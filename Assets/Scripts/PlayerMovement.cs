@@ -32,29 +32,18 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Flip();
+        if (!_sManager.playerIsLocked) { Move(); }
 
         // Get raw horizontal input (-1 BACKWARD, 0 NULL, or 1 FORWARD)
         moveInput = Input.GetAxisRaw("Horizontal"); //ASWD
 
         GD = IsGrounded();
-
-            #region Running
-            float targetSpeed = (moveInput * moveSpeed) * speedMulti;
-            // Calculate the diff between current-velocity and peak speed
-            float speedDif = targetSpeed - rb.linearVelocity.x;
-            // Choose acce or dec depending on whether the player is moving or stopping
-            float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? accSpeed : decSpeed;
-            // Apply exponential force scaling for nicer acceleration curves
-            float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
-
-            rb.AddForce((movement * Vector2.right));
-            #endregion
     }
 
     private void Update()
     {
         speedMulti = _iManager.moveSpeedMulti;
-        Jump();
+        if (!_sManager.playerIsLocked) { Jump(); }
 
         //X
         if (moveInput != 0)
@@ -79,6 +68,21 @@ public class PlayerMovement : MonoBehaviour
     public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
+
+    public void Move()
+    {
+        #region Running
+        float targetSpeed = (moveInput * moveSpeed) * speedMulti;
+        // Calculate the diff between current-velocity and peak speed
+        float speedDif = targetSpeed - rb.linearVelocity.x;
+        // Choose acce or dec depending on whether the player is moving or stopping
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? accSpeed : decSpeed;
+        // Apply exponential force scaling for nicer acceleration curves
+        float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, velPower) * Mathf.Sign(speedDif);
+
+        rb.AddForce((movement * Vector2.right));
+        #endregion
     }
 
     public void Jump()

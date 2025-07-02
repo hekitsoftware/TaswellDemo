@@ -2,7 +2,7 @@
 - Project name: TaswellGame
 - Unity version: Unity 6000.0.31f1
 - Active game object:
-  - Name: ELEV_DOORS
+  - Name: SCENE_MANAGER
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

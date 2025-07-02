@@ -37,6 +37,7 @@ public class ChestScript : MonoBehaviour
         }
     }
 
+    //Roll random number + Choose an item to spit out
     Item GetDroppedItem()
     {
         Debug.Log($"Roll Started");
@@ -59,6 +60,7 @@ public class ChestScript : MonoBehaviour
         return null;
     }
 
+    //Spawn a physical version of the item for the player to see/pick-up
     public void InstatiateItem(Vector2 spawnPosition)
     {
         Item droppedItem = GetDroppedItem();
