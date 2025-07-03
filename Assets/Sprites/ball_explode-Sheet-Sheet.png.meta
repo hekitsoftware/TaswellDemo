@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: 16e9254ce91d2ce4581806dce8131250
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6936567791153603095
+    second: ball_explode-Sheet-Sheet_0
+  - first:
+      213: -2832900320895812577
+    second: ball_explode-Sheet-Sheet_1
+  - first:
+      213: -9060887896016524355
+    second: ball_explode-Sheet-Sheet_2
+  - first:
+      213: 4303967227222245056
+    second: ball_explode-Sheet-Sheet_3
+  - first:
+      213: -4068503348680482050
+    second: ball_explode-Sheet-Sheet_4
+  - first:
+      213: 8356906790227485334
+    second: ball_explode-Sheet-Sheet_5
+  - first:
+      213: -2769648374217994576
+    second: ball_explode-Sheet-Sheet_6
+  - first:
+      213: -44444134533903919
+    second: ball_explode-Sheet-Sheet_7
+  - first:
+      213: 4973187011237410621
+    second: ball_explode-Sheet-Sheet_8
+  - first:
+      213: -7165153744185092048
+    second: ball_explode-Sheet-Sheet_9
+  - first:
+      213: 4424600377475359611
+    second: ball_explode-Sheet-Sheet_10
+  - first:
+      213: 419894736138778293
+    second: ball_explode-Sheet-Sheet_11
+  - first:
+      213: 325057234585238058
+    second: ball_explode-Sheet-Sheet_12
+  - first:
+      213: -6514427040232904039
+    second: ball_explode-Sheet-Sheet_13
+  - first:
+      213: -876856830500984721
+    second: ball_explode-Sheet-Sheet_14
+  - first:
+      213: 3021295506680593991
+    second: ball_explode-Sheet-Sheet_15
+  - first:
+      213: 8997119211245555453
+    second: ball_explode-Sheet-Sheet_16
+  - first:
+      213: 7379151665007243847
+    second: ball_explode-Sheet-Sheet_17
+  - first:
+      213: 5386674645037293505
+    second: ball_explode-Sheet-Sheet_18
+  - first:
+      213: -2078882680879795283
+    second: ball_explode-Sheet-Sheet_19
+  - first:
+      213: -7819002686287483833
+    second: ball_explode-Sheet-Sheet_20
+  - first:
+      213: -5783502053456408701
+    second: ball_explode-Sheet-Sheet_21
+  - first:
+      213: 1962020330144014683
+    second: ball_explode-Sheet-Sheet_22
+  - first:
+      213: 7335312553192364424
+    second: ball_explode-Sheet-Sheet_23
+  - first:
+      213: -7789664670138959566
+    second: ball_explode-Sheet-Sheet_24
+  - first:
+      213: 2397967668910810945
+    second: ball_explode-Sheet-Sheet_25
+  - first:
+      213: -7946679150898283245
+    second: ball_explode-Sheet-Sheet_26
+  - first:
+      213: -4099937137492144539
+    second: ball_explode-Sheet-Sheet_27
+  - first:
+      213: -4080790998968061387
+    second: ball_explode-Sheet-Sheet_28
+  - first:
+      213: 6400667948730920261
+    second: ball_explode-Sheet-Sheet_29
+  - first:
+      213: 7982097981842271323
+    second: ball_explode-Sheet-Sheet_30
+  - first:
+      213: 251791217078819602
+    second: ball_explode-Sheet-Sheet_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed9fdf685c5cbf90800000000000000
+      internalID: -6936567791153603095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c3ae0ea248fa8d0800000000000000
+      internalID: -2832900320895812577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb6c481772414280800000000000000
+      internalID: -9060887896016524355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce3187c363cabb30800000000000000
+      internalID: 4303967227222245056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef2a96e92c5c987c0800000000000000
+      internalID: -4068503348680482050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6922f8ce272b9f370800000000000000
+      internalID: 8356906790227485334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ball_explode-Sheet-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383bde3732b1f064ab2747e22632c869
+      internalID: -1144503724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 87402dec51c97d74db0524222d94bcf4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ball_explode-Sheet-Sheet_0: -6936567791153603095
+      ball_explode-Sheet-Sheet_1: -2832900320895812577
+      ball_explode-Sheet-Sheet_2: -9060887896016524355
+      ball_explode-Sheet-Sheet_3: 4303967227222245056
+      ball_explode-Sheet-Sheet_4: -4068503348680482050
+      ball_explode-Sheet-Sheet_5: 8356906790227485334
+      ball_explode-Sheet-Sheet_6: -1144503724
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

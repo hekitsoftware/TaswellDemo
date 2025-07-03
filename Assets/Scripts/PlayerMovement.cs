@@ -25,13 +25,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool IM; //IsMoving
     [SerializeField] public bool IF; //isFalling
 
+    [SerializeField] public WeaponParent weaponParent;
+    private Vector2 pointerInput, movementInput;
+    [SerializeField] private InputActionReference movement, attack, pointerPosition;
+
     public bool isFacingRight = true;
 
     private float moveInput;
 
     private void FixedUpdate()
     {
-        Flip();
         if (!_sManager.playerIsLocked) { Move(); }
 
         // Get raw horizontal input (-1 BACKWARD, 0 NULL, or 1 FORWARD)
@@ -40,8 +43,36 @@ public class PlayerMovement : MonoBehaviour
         GD = IsGrounded();
     }
 
+    //Detect which side of the screen the Mouse is
+
+    public void FaceMouse()
+    {
+        Vector2 mousePosition = Input.mousePosition;
+        float screenCenter = Screen.width / 2;
+
+        bool shouldFaceRight = mousePosition.x >= screenCenter;
+
+        if (shouldFaceRight != isFacingRight)
+        {
+            Flip();
+            isFacingRight = shouldFaceRight;
+        }
+
+        // Pass facing direction to weapon
+        weaponParent.IsFacingRight = isFacingRight;
+    }
+
+    private void Flip()
+    {
+        Vector3 scale = _player.transform.localScale;
+        scale.x *= -1;
+        _player.transform.localScale = scale;
+    }
+
     private void Update()
     {
+        FaceMouse();
+
         speedMulti = _iManager.moveSpeedMulti;
         if (!_sManager.playerIsLocked) { Jump(); }
 
@@ -100,20 +131,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocityY * 0.5f);
             }
-    }
-
-    public void Flip()
-    {
-        if (isFacingRight && moveInput < 0 || !isFacingRight && moveInput > 0)
-        {
-            // Flip the character's local scale on the X axis
-            Vector3 tempScale = _player.transform.localScale;
-            tempScale.x *= -1;
-
-            _player.transform.localScale = tempScale;
-
-            isFacingRight = !isFacingRight;
-        }
     }
 
     #endregion
