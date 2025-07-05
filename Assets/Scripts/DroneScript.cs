@@ -51,6 +51,15 @@ public class DroneScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    public void Death()
+    {
+        anim.SetBool("IsDead", true);
+        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Exit"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.gameObject.layer == playerLayerId)
@@ -67,7 +76,7 @@ public class DroneScript : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.transform.position);
         Debug.Log(distance);
 
-        if(distance < 5)
+        if(distance < 10)
         {
             timer += Time.deltaTime;
 

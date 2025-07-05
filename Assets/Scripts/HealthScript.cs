@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
     [Header("Health Settings")]
     public int maxHealth = 100;
-    public int currentHealth;
+    public float currentHealth;
     public bool isInvulnerable = false;
-    public Image healthBar;
 
-    public delegate void OnDeathDelegate();
-    public event OnDeathDelegate OnDeath;
+    public UnityEvent OnDeath;
 
     private void Awake()
     {
@@ -19,8 +18,10 @@ public class HealthScript : MonoBehaviour
 
     private void Update()
     {
-        //this needs to be negatvie due to how I'm making the health bar work
-        healthBar.fillAmount = (maxHealth - currentHealth);
+        if (currentHealth < 0) {
+        currentHealth = 0;
+            Die();
+        }
     }
 
     public virtual void Damage(int amount, Vector2 hitDirection)
@@ -36,12 +37,6 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    //HEALING
-    public virtual void Heal(int amount)
-    {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-    }
-
     //DEATH
     protected virtual void Die()
     {
@@ -51,7 +46,7 @@ public class HealthScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public int GetHealth()
+    public double GetHealth()
     {
         return currentHealth;
     }
