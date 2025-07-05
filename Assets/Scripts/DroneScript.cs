@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Threading;
 
 public class DroneScript : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class DroneScript : MonoBehaviour
     [SerializeField] Material debugMatGreen;
     [SerializeField] Mesh debugMesh;
     [SerializeField] bool debugEnabled = false;
+
+    //Shooting
+    public GameObject bullet;
+    public GameObject player;
+    public Transform bulletPos;
 
     private Vector3 TargetPosition => target != null ? target.position + Vector3.up : transform.position;
     private List<Vector3> wayPoints = new List<Vector3>();
@@ -41,6 +47,8 @@ public class DroneScript : MonoBehaviour
         ownHealth = GetComponent<HealthScript>();
         audioSource = GetComponent<AudioSource>();
         orgDrag = rb.linearDamping;
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,9 +59,24 @@ public class DroneScript : MonoBehaviour
         }
     }
 
+    //Fire timer
+    public float timer = 2f;
+
     public void Fire()
     {
-        // Implement shooting logic here
+        float distance = Vector2.Distance(transform.position, player.transform.position);
+        Debug.Log(distance);
+
+        if(distance < 5)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > 2)
+            {
+                timer = 0;
+                Instantiate(bullet, bulletPos.position, Quaternion.identity);
+            }
+        }
     }
 
     private void HandleAudio()
@@ -70,7 +93,7 @@ public class DroneScript : MonoBehaviour
         {
             Vector2 direction = (TargetPosition - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * rotationSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle + 180f), Time.deltaTime * rotationSpeed);
         }
     }
 
@@ -80,6 +103,7 @@ public class DroneScript : MonoBehaviour
 
         HandleAudio();
         Point();
+        Fire();
 
         Vector2 targetDir = (TargetPosition - transform.position).normalized;
         float distance = Vector2.Distance(transform.position, TargetPosition);
