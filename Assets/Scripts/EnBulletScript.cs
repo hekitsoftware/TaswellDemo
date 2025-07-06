@@ -37,6 +37,6 @@ public class EnBulletScript : MonoBehaviour
             other.gameObject.GetComponent<HealthScript>().currentHealth -= 15;
             Destroy(gameObject);
         }
-        else { Destroy(gameObject); }
+        else if (other.gameObject.CompareTag("Ground")) { Destroy(gameObject); }
     }
 }

@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class ItemObject : MonoBehaviour
 {

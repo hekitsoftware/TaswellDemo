@@ -179,7 +179,7 @@ MonoBehaviour:
   isOpen: 0
   open_sfx: {fileID: 415810608514387913}
   droppedItemPrefab: {fileID: 8803790627519158158, guid: d2828382b9660b04f866a6486cd7baad, type: 3}
-  _player: {fileID: 971602111516861022, guid: 841c2a534ef70d946b4dcb7b516d7548, type: 3}
+  _player: {fileID: 7155451543138577796, guid: bdcdfdc8825ae2f4bb27e7648e2c6607, type: 3}
   itemobj: {fileID: 6481119583436553851, guid: d2828382b9660b04f866a6486cd7baad, type: 3}
   itemPool:
   - {fileID: 11400000, guid: ff56377ebb1582c49a87d3def3ee6dd2, type: 2}

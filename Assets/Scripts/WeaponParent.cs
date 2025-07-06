@@ -9,9 +9,12 @@ public class WeaponParent : MonoBehaviour
     public AudioSource adSrc;
     public AudioClip shotSnd;
 
+    public ItemManager itemStats;
+
     public bool canFire;
     private float timer;
-    public float timeBetweenFiring;
+    public double timeBetweenFiring;
+    public double dpsMulti;
 
     public Vector2 PointerPosition { get; set; }
     public bool IsFacingRight { get; set; }
@@ -20,6 +23,8 @@ public class WeaponParent : MonoBehaviour
 
     private void Update()
     {
+        dpsMulti = itemStats.dmgMulti;
+
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.z = 0;
         difference.Normalize();
@@ -46,6 +51,11 @@ public class WeaponParent : MonoBehaviour
         {
             Fire();
         }
+    }
+
+    public void UpdateDPS()
+    {
+        timeBetweenFiring += dpsMulti;
     }
 
     public void Fire()

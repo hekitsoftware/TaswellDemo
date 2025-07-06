@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6665871924535579140}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 1
+  m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8805112e990f1d443878608bef0ba89f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 50
+  force: 20
 --- !u!61 &-6665871924535579140
 BoxCollider2D:
   m_ObjectHideFlags: 0

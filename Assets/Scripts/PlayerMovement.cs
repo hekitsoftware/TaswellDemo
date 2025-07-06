@@ -25,11 +25,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool IM; //IsMoving
     [SerializeField] public bool IF; //isFalling
 
+    public HealthScript healScript;
+
     [SerializeField] public WeaponParent weaponParent;
     private Vector2 pointerInput, movementInput;
     [SerializeField] private InputActionReference movement, attack, pointerPosition;
 
     public bool isFacingRight = true;
+
+    public AudioSource mouth;
+    public AudioClip ouchySnd;
 
     private float moveInput;
 
@@ -41,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal"); //ASWD
 
         GD = IsGrounded();
+    }
+
+    public void Ouchy()
+    {
+        mouth.PlayOneShot(ouchySnd, 1);
     }
 
     //Detect which side of the screen the Mouse is
@@ -71,6 +81,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        healScript.healthMulti = _iManager.hpMulti;
+
+        healScript.Heal(0.01);
+
         FaceMouse();
 
         speedMulti = _iManager.moveSpeedMulti;

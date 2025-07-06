@@ -1,7 +1,9 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ItemManager : MonoBehaviour
 {
@@ -14,8 +16,10 @@ public class ItemManager : MonoBehaviour
     [SerializeField] public float HP = 100f;
     [SerializeField] public float attackSPEED = 100f;
 
+    public UnityEvent CompileState;
+
     [Header("Item Multipliers")]
-    public float moveSpeedMulti = 1f;
+    public float moveSpeedMulti = 1f; //!
     public float dmgMulti = 1f;
     public float hpMulti = 1f;
     public float attackSpeedMulti = 1f;
@@ -65,6 +69,8 @@ public class ItemManager : MonoBehaviour
         hpMulti = tempHP;
         attackSpeedMulti = tempAtkSpeed;
         jumpForce = tempJumpForce;
+
+        CompileState?.Invoke();
     }
     #endregion // Calculate Items
 }

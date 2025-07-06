@@ -8,9 +8,14 @@ public class BulletScript : MonoBehaviour
     private Camera cam;
     private Rigidbody2D rb;
     public float Speed;
+    public Collider2D Collider;
+
+    public ItemManager ItemManager;
+    public double dmgMulti;
 
     private void Start()
     {
+        Collider = GetComponent<Collider2D>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -26,6 +31,11 @@ public class BulletScript : MonoBehaviour
         StartCoroutine(SelfDistruct());
     }
 
+    private void Update()
+    {
+        dmgMulti = ItemManager.dmgMulti;
+    }
+
     public int count = 0;
 
     IEnumerator SelfDistruct()
@@ -38,5 +48,17 @@ public class BulletScript : MonoBehaviour
         Debug.Log("Counting finished!");
 
         Destroy(gameObject);
+    }
+
+    public double damage = 15;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Drone"))
+        {
+            collision.gameObject.GetComponent<HealthScript>().currentHealth -= (damage += dmgMulti);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Ground")) { Destroy(gameObject); }
     }
 }

@@ -9,7 +9,7 @@ public class HealthBarScript : MonoBehaviour
     [SerializeField] public TMP_Text healthText;
 
     public HealthScript healthScript;
-    private float healthBarPercentage;
+    private double healthBarPercentage;
     private void Awake()
     {
         healthScript = Player.GetComponent<HealthScript>();
@@ -20,9 +20,8 @@ public class HealthBarScript : MonoBehaviour
     private void Update()
     {
         healthBarPercentage = healthScript.currentHealth / 100;
-        Debug.Log($"{healthBarPercentage}");
 
-        healthBar.value = healthBarPercentage;
-        healthText.text = $"{healthScript.currentHealth} / {healthScript.maxHealth}";
+        healthBar.value = (float)healthBarPercentage;
+        healthText.text = $"{(int)healthScript.currentHealth} / {(int)healthScript.maxHealth}";
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 
 public class DroneScript : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class DroneScript : MonoBehaviour
     [SerializeField] float rotationSpeed = 5f;
     [SerializeField] float velocity = 9f;
     [SerializeField] float acceleration = 100f;
-    [SerializeField] float damage = 10f;
 
     [Header("Debugging Visualiser")]
     [SerializeField] Material debugMatOrange;
@@ -38,6 +38,8 @@ public class DroneScript : MonoBehaviour
     private int worldLayerMask;
     private int playerLayerId;
 
+    public bool isUnstable;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -49,6 +51,31 @@ public class DroneScript : MonoBehaviour
         orgDrag = rb.linearDamping;
 
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    public float timer2 = 0f;
+
+    public void StabilizeSpin()
+    {
+        if (isUnstable)
+        {
+            timer += Time.deltaTime;
+
+            if (timer2 < 2)
+            {
+                float threshold = 50f;
+                float damping = 5f;
+
+                if (Mathf.Abs(rb.angularVelocity) > threshold)
+                {
+                    // Apply opposite torque to reduce spin
+                    float oppositeTorque = -Mathf.Sign(rb.angularVelocity) * damping;
+                    rb.AddTorque(oppositeTorque);
+                }
+            }
+            else { isUnstable = false; }
+        }
+        else { return; }
     }
 
     public void Death()
@@ -64,7 +91,7 @@ public class DroneScript : MonoBehaviour
     {
         if (collision.collider.gameObject.layer == playerLayerId)
         {
-            collision.collider.gameObject.GetComponent<HealthScript>()?.Damage((int)damage, collision.contacts[0].normal);
+            collision.collider.gameObject.GetComponent<HealthScript>()?.Damage(5);
         }
     }
 
@@ -73,19 +100,13 @@ public class DroneScript : MonoBehaviour
 
     public void Fire()
     {
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        Debug.Log(distance);
-
-        if(distance < 10)
-        {
             timer += Time.deltaTime;
 
-            if (timer > 2)
+        if (timer > 2)
             {
                 timer = 0;
                 Instantiate(bullet, bulletPos.position, Quaternion.identity);
             }
-        }
     }
 
     private void HandleAudio()
