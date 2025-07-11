@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
     [Header("Health Settings")]
-    public double maxHealth = 100f;
-    public double currentHealth;
+    public float maxHealth = 100f;
+    public float currentHealth;
     public bool isInvulnerable = false;
-    public double healthMulti;
+    public float healthMulti;
 
     public Collider2D hitbox;
 
@@ -74,7 +74,7 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    public void Heal(double amount)
+    public void Heal(float amount)
     {
         currentHealth += amount;
     }

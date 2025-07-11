@@ -11,7 +11,7 @@ public class BulletScript : MonoBehaviour
     public Collider2D Collider;
 
     public ItemManager ItemManager;
-    public double dmgMulti;
+    public float dmgMulti;
 
     private void Start()
     {
@@ -34,6 +34,8 @@ public class BulletScript : MonoBehaviour
     private void Update()
     {
         dmgMulti = ItemManager.dmgMulti;
+
+        damage *= dmgMulti;
     }
 
     public int count = 0;
@@ -50,7 +52,7 @@ public class BulletScript : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public double damage = 15;
+    public float damage = 15;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

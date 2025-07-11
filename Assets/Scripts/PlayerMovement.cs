@@ -79,11 +79,18 @@ public class PlayerMovement : MonoBehaviour
         _player.transform.localScale = scale;
     }
 
+    private float healTimer = 0f;
+
     private void Update()
     {
         healScript.healthMulti = _iManager.hpMulti;
 
-        healScript.Heal(0.005);
+        healTimer += Time.deltaTime;
+        if (healTimer >= 1f)
+        {
+            healScript.Heal(1);
+            healTimer = 0f;
+        }
 
         FaceMouse();
 

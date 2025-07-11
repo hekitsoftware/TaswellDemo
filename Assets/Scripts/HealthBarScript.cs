@@ -26,7 +26,7 @@ public class HealthBarScript : MonoBehaviour
     {
         if (healthScript == null) return;
 
-        healthBar.value = ((float)healthScript.currentHealth / 100);
+        healthBar.value = ((healthScript.currentHealth / 100) -1); //fixing an error w. 101 HP
         healthText.text = $"{(int)healthScript.GetHealth()} / {(int)healthScript.maxHealth}";
     }
 }

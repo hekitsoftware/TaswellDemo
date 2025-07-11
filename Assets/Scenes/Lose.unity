@@ -447,9 +447,6 @@ GameObject:
   - component: {fileID: 910642204}
   - component: {fileID: 910642203}
   - component: {fileID: 910642207}
-  - component: {fileID: 910642206}
-  - component: {fileID: 910642205}
-  - component: {fileID: 910642208}
   m_Layer: 0
   m_Name: GAME_OVER
   m_TagString: Untagged
@@ -527,35 +524,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &910642205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910642202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e6bcc8ca6371574aa3e43d07da80af1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicLibrary: {fileID: 910642206}
-  musicSource: {fileID: 910642207}
---- !u!114 &910642206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910642202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0d0162aad71ee1449fb00d880af35b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tracks:
-  - trackName: LoseTrack
-    clip: {fileID: 8300000, guid: d46c32ddceb61e544b507f84a29a60dd, type: 3}
 --- !u!82 &910642207
 AudioSource:
   m_ObjectHideFlags: 0
@@ -653,19 +621,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &910642208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910642202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dcd38aeaa91662438ff8a480197d423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screen: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

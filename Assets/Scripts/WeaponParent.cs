@@ -21,9 +21,14 @@ public class WeaponParent : MonoBehaviour
 
     [SerializeField] float offset;
 
+    private void Start()
+    {
+        timeBetweenFiring = 0.5;
+    }
+
     private void Update()
     {
-        dpsMulti = itemStats.dmgMulti;
+        dpsMulti = itemStats.attackSpeedMulti;
 
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.z = 0;

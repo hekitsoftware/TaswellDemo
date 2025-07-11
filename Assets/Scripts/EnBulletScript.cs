@@ -5,12 +5,18 @@ public class EnBulletScript : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     public float force;
-
     private float timer = 0f;
+
+    public CapsuleCollider2D capCol; // Physical collider
+    private BoxCollider2D triggerCol; // Trigger collider for player hit
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        capCol = GetComponent<CapsuleCollider2D>();
+        triggerCol = GetComponent<BoxCollider2D>();
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - transform.position;
@@ -37,7 +43,7 @@ public class EnBulletScript : MonoBehaviour
             var health = other.GetComponent<HealthScript>();
             if (health != null)
             {
-                health.Damage(5); // Proper damage function
+                health.Damage(5);
             }
             Destroy(gameObject);
         }
@@ -47,7 +53,7 @@ public class EnBulletScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Destroy(gameObject); // Just destroy this object
+            Destroy(gameObject);
         }
     }
 }

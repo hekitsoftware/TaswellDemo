@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4960e7a969b0b84da7a77fec7a55503, type: 3}
   m_Name: I_TungstanCube
   m_EditorClassIdentifier: 
-  itemName: Tungstan Cube
-  itemDesc: Double Health, Slower Speed
+  itemName: Weightless Cube
+  itemDesc: More HP & More Jump
   itemSprite: {fileID: 21300000, guid: e223324e3fedfc94eb91bbeee6400be7, type: 3}
   Rarity: 2
   GrowthCurve: 1
-  dropChance: 41.8
+  dropChance: 50.3
   HP: 2
-  SPEED: 0.5
+  SPEED: 0
   DMG: 0
   atkSPEED: 0
-  JumpBalance: 1.05
+  JumpBalance: 1.5
   PowerTime: 0
   GravityScale: 0
