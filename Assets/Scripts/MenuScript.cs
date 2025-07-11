@@ -7,6 +7,7 @@ public enum MenuScreen{
     Menu,
     Win,
     Loss,
+    Level,
 }
 public class MenuScript : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class MenuScript : MonoBehaviour
                 break;
             case MenuScreen.Loss:
                 manager.PlayMusic("LoseTrack", (1 / 2));
+                break;
+            case MenuScreen.Level:
+                manager.PlayMusic("Henhouse", (1 / 2));
                 break;
         }
     }

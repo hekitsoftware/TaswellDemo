@@ -21,7 +21,7 @@ MonoBehaviour:
   HP: 0
   SPEED: 0
   DMG: 0
-  atkSPEED: 25
+  atkSPEED: 0.5
   JumpBalance: 0
   PowerTime: 0
   GravityScale: 0
