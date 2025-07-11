@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,11 +19,15 @@ public class HealthScript : MonoBehaviour
     public UnityEvent OnHit;
 
     public GameObject floatingTextPrefab;
+    public TextMeshPro text;
     public Transform selfLocation;
+
+    [SerializeField] public bool IsPlayer;
 
     private void Start()
     {
-        selfLocation = GetComponent<GameObject>().transform;
+        selfLocation = this.transform;
+        text = floatingTextPrefab.GetComponent<TextMeshPro>();
         healthMulti = 1;
     }
 
@@ -60,6 +65,7 @@ public class HealthScript : MonoBehaviour
             return;
 
         currentHealth -= amount;
+        text.text = $"{amount}";
         Instantiate(floatingTextPrefab, selfLocation.position, Quaternion.identity);
 
         if (currentHealth <= 0)

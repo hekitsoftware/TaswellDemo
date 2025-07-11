@@ -4,24 +4,29 @@ using UnityEngine.UI;
 
 public class HealthBarScript : MonoBehaviour
 {
-    [SerializeField] public Slider healthBar;
-    [SerializeField] public GameObject Player;
-    [SerializeField] public TMP_Text healthText;
+    [SerializeField] private Slider healthBar;
+    [SerializeField] private GameObject player;
+    [SerializeField] private TMP_Text healthText;
 
-    public HealthScript healthScript;
-    private double healthBarPercentage;
+    private HealthScript healthScript;
+
     private void Awake()
     {
-        healthScript = Player.GetComponent<HealthScript>();
+        if (player != null)
+        {
+            healthScript = player.GetComponent<HealthScript>();
+        }
 
-        healthBar.maxValue = 1;
-        healthBar.minValue = 0;
+        // Initialize slider range
+        healthBar.minValue = 0f;
+        healthBar.maxValue = 1f;
     }
+
     private void Update()
     {
-        healthBarPercentage = healthScript.currentHealth / 100;
+        if (healthScript == null) return;
 
-        healthBar.value = (float)healthBarPercentage;
-        healthText.text = $"{(int)healthScript.currentHealth} / {(int)healthScript.maxHealth}";
+        healthBar.value = ((float)healthScript.currentHealth / 100);
+        healthText.text = $"{(int)healthScript.GetHealth()} / {(int)healthScript.maxHealth}";
     }
 }

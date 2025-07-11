@@ -21,7 +21,7 @@ public class ElevScript : MonoBehaviour
     [SerializeField] public BoxCollider2D playerDetection;
 
     public Animator anim;
-    public SceneManager sceneManager;
+    public SceneManager2 sceneManager;
 
     public bool hasPassenger;
     public bool isTransitioning;

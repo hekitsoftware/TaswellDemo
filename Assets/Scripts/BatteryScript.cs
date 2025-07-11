@@ -9,7 +9,7 @@ public class BatteryScript : MonoBehaviour
     [SerializeField] public GameObject _sceneManagerObject;
 
     public CircleCollider2D _circleCollider;
-    public SceneManager _sManager;
+    public SceneManager2 _sManager;
     public Animator anim;
     public AudioSource chuggington; //Generator Sound
 
@@ -25,7 +25,7 @@ public class BatteryScript : MonoBehaviour
     {
         //Init Variables
         _circleCollider = _battery.GetComponent<CircleCollider2D>();
-        _sManager = _sceneManagerObject.GetComponent<SceneManager>();
+        _sManager = _sceneManagerObject.GetComponent<SceneManager2>();
         anim = _battery.GetComponent<Animator>();
         chuggington = _battery.GetComponent<AudioSource>();
 

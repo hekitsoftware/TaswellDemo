@@ -55,7 +55,7 @@ public class WeaponParent : MonoBehaviour
 
     public void UpdateDPS()
     {
-        timeBetweenFiring += dpsMulti;
+        timeBetweenFiring *= dpsMulti;
     }
 
     public void Fire()

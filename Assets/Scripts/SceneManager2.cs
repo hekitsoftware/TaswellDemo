@@ -1,11 +1,15 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class SceneManager : MonoBehaviour
+public class SceneManager2 : MonoBehaviour
 {
     [SerializeField] GameObject EntrancePrefab;
     [SerializeField] GameObject ExitPrefab;
     [SerializeField] public GameObject Player;
     [SerializeField] public GameObject Battery;
+    [SerializeField] public MusicManager mManager;
 
     public ElevScript elevScript;
     public ElevScript exitElevScript;
@@ -28,8 +32,11 @@ public class SceneManager : MonoBehaviour
     //Battery Stuff
     public float chargeSpeedMultiplier;
 
-    private void Awake()
+    private void Start()
     {
+        fadeIn = false;
+        fadeOut = false;
+
         //Grab the scripts
         elevScript = EntrancePrefab.GetComponent<ElevScript>();
         exitElevScript = ExitPrefab.GetComponent<ElevScript>();
@@ -39,7 +46,6 @@ public class SceneManager : MonoBehaviour
         //Initialise all level-variables
         exitElevatorIsCharged = false;
 
-        isEntering = true;
         isLeaving = false;
 
         exitElevatorIsOpen = false;
@@ -47,6 +53,10 @@ public class SceneManager : MonoBehaviour
 
         EnterStage();
     }
+
+    public bool fadeOut;
+    public bool fadeIn;
+    public float TimeToFade = 3;
 
     private void Update()
     {
@@ -70,20 +80,29 @@ public class SceneManager : MonoBehaviour
             {
                 exitElevScript.isExitClosing = false;
             }
-        } else { exitElevatorIsCharged = false; }
+        }
+        else { exitElevatorIsCharged = false; }
     }
 
     public void EnterStage()
     {
+        isEntering = true;
         playerIsLocked = true;
         elevScript.isClosing = false;
     }
 
-    public void LeaveStage()
+    private void LeaveStage()
     {
         playerIsLocked = true;
         isLeaving = true;
         exitElevScript.isExitClosing = true;
-        playerIsLocked = true;
+        SceneManager.LoadScene(3);
+        mManager.PlayMusic("WinTrack", (1 / 2));
+    }
+
+    public void DieSequence()
+    {
+        SceneManager.LoadScene(2);
+        mManager.PlayMusic("LoseTrack", (1 / 2));
     }
 }

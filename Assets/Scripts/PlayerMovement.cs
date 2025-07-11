@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] public ItemManager _iManager;
-    [SerializeField] public SceneManager _sManager;
+    [SerializeField] public SceneManager2 _sManager;
 
     [SerializeField] public GameObject _player;
     [SerializeField] public Animator _anim;
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
     {
         healScript.healthMulti = _iManager.hpMulti;
 
-        healScript.Heal(0.01);
+        healScript.Heal(0.005);
 
         FaceMouse();
 
