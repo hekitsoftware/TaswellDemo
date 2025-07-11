@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
@@ -9,10 +8,9 @@ public class HealthScript : MonoBehaviour
     public float maxHealth = 100f;
     public float currentHealth;
     public bool isInvulnerable = false;
-    public float healthMulti;
+    public float healthMulti = 1f;
 
     public Collider2D hitbox;
-
     public ItemManager itemScript;
 
     public UnityEvent OnDeath;
@@ -24,39 +22,35 @@ public class HealthScript : MonoBehaviour
 
     [SerializeField] public bool IsPlayer;
 
-    private void Start()
+    private void Awake()
     {
-        selfLocation = this.transform;
-        text = floatingTextPrefab.GetComponent<TextMeshPro>();
-        healthMulti = 1;
+        currentHealth = maxHealth;
+        selfLocation = transform;
+
+        if (floatingTextPrefab != null)
+        {
+            text = floatingTextPrefab.GetComponent<TextMeshPro>();
+        }
+    }
+
+    private void Update()
+    {
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+            Die();
+        }
+
+        if (currentHealth > 100)
+            currentHealth = 100;
+
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
     }
 
     public void updateMaxHealth()
     {
         maxHealth *= healthMulti;
-    }
-
-    private void Awake()
-    {
-        currentHealth = maxHealth;
-    }
-
-    private void Update()
-    {
-        if (currentHealth < 0) {
-        currentHealth = 0;
-            Die();
-        }
-
-        if (currentHealth > 100)
-        {
-            currentHealth = 100;
-        }
-
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
     }
 
     public void Damage(int amount)
@@ -65,8 +59,14 @@ public class HealthScript : MonoBehaviour
             return;
 
         currentHealth -= amount;
-        text.text = $"{amount}";
-        Instantiate(floatingTextPrefab, selfLocation.position, Quaternion.identity);
+
+        if (floatingTextPrefab != null)
+        {
+            text.text = $"{amount}";
+            Instantiate(floatingTextPrefab, selfLocation.position, Quaternion.identity);
+        }
+
+        OnHit?.Invoke();
 
         if (currentHealth <= 0)
         {
@@ -79,12 +79,10 @@ public class HealthScript : MonoBehaviour
         currentHealth += amount;
     }
 
-    //DEATH
     protected virtual void Die()
     {
         Debug.Log($"{gameObject.name} has died.");
         OnDeath?.Invoke();
-        // Default death behavior
         Destroy(gameObject);
     }
 
@@ -97,8 +95,8 @@ public class HealthScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            OnHit?.Invoke();
             Debug.Log($"{this} got hit!");
+            OnHit?.Invoke();
         }
     }
 }

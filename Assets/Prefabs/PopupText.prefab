@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7752254628785439826}
   - component: {fileID: 8442908103840128647}
   - component: {fileID: 7434881729346787817}
+  - component: {fileID: 9079662044719579572}
   m_Layer: 0
   m_Name: PopupText
   m_TagString: Untagged
@@ -176,3 +177,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 8442908103840128647}
   m_maskType: 0
+--- !u!95 &9079662044719579572
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130656532825111208}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a64c2e7147934d440a959ae365e4d553, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

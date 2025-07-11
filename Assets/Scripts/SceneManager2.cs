@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SceneManager2 : MonoBehaviour
 {
@@ -29,38 +28,64 @@ public class SceneManager2 : MonoBehaviour
 
     public bool playerIsLocked;
 
-    //Battery Stuff
+    // Battery Stuff
     public float chargeSpeedMultiplier;
 
-    private void Start()
+    // Fade variables
+    public bool fadeOut;
+    public bool fadeIn;
+    public float TimeToFade = 3;
+
+    private IEnumerator Start()
     {
         fadeIn = false;
         fadeOut = false;
 
-        //Grab the scripts
+        // Wait for all GameObjects to finish loading/spawning
+        yield return new WaitForSeconds(0.1f);
+
+        // Attempt to find objects if not manually assigned
+        if (Player == null)
+            Player = GameObject.FindGameObjectWithTag("Player");
+
+        if (Battery == null)
+            Battery = GameObject.FindWithTag("Battery");
+
+        if (EntrancePrefab == null || ExitPrefab == null)
+        {
+            Debug.LogError("Elevator prefabs not assigned!");
+            yield break;
+        }
+
         elevScript = EntrancePrefab.GetComponent<ElevScript>();
         exitElevScript = ExitPrefab.GetComponent<ElevScript>();
+
+        if (Player == null)
+        {
+            Debug.LogError("Player not found in scene.");
+            yield break;
+        }
+
+        if (Battery == null)
+        {
+            Debug.LogError("Battery not found in scene.");
+            yield break;
+        }
+
         _iManager = Player.GetComponent<ItemManager>();
         batteryScript = Battery.GetComponent<BatteryScript>();
 
-        //Initialise all level-variables
+        // Initialize values
         exitElevatorIsCharged = false;
-
         isLeaving = false;
-
         exitElevatorIsOpen = false;
         exitElevScript.isExitClosing = true;
 
         EnterStage();
     }
 
-    public bool fadeOut;
-    public bool fadeIn;
-    public float TimeToFade = 3;
-
     private void Update()
     {
-        //Wait for Elevator to Open
         if (isEntering && elevScript.anim.GetCurrentAnimatorStateInfo(0).IsName("Elev_Open"))
         {
             isEntering = false;
@@ -73,15 +98,16 @@ public class SceneManager2 : MonoBehaviour
             LeaveStage();
         }
 
-        if (batteryScript.isActive)
+        if (batteryScript != null && batteryScript.isActive)
         {
             exitElevatorIsCharged = true;
             if (!isLeaving)
-            {
                 exitElevScript.isExitClosing = false;
-            }
         }
-        else { exitElevatorIsCharged = false; }
+        else
+        {
+            exitElevatorIsCharged = false;
+        }
     }
 
     public void EnterStage()
@@ -97,12 +123,12 @@ public class SceneManager2 : MonoBehaviour
         isLeaving = true;
         exitElevScript.isExitClosing = true;
         SceneManager.LoadScene(3);
-        mManager.PlayMusic("WinTrack", (1 / 2));
+        mManager.PlayMusic("WinTrack", 1);
     }
 
     public void DieSequence()
     {
         SceneManager.LoadScene(2);
-        mManager.PlayMusic("LoseTrack", (1 / 2));
+        mManager.PlayMusic("LoseTrack", 1);
     }
 }

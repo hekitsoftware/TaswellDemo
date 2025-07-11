@@ -12,10 +12,7 @@ public class HealthBarScript : MonoBehaviour
 
     private void Awake()
     {
-        if (player != null)
-        {
-            healthScript = player.GetComponent<HealthScript>();
-        }
+        healthScript = player.GetComponent<HealthScript>();
 
         // Initialize slider range
         healthBar.minValue = 0f;
@@ -24,9 +21,7 @@ public class HealthBarScript : MonoBehaviour
 
     private void Update()
     {
-        if (healthScript == null) return;
-
-        healthBar.value = ((healthScript.currentHealth / 100) -1); //fixing an error w. 101 HP
-        healthText.text = $"{(int)healthScript.GetHealth()} / {(int)healthScript.maxHealth}";
+        healthBar.value = ((healthScript.currentHealth / 100));
+        healthText.text = $"{healthScript.GetHealth()} / {(int)healthScript.maxHealth}";
     }
 }
