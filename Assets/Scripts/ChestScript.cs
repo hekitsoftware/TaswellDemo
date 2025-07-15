@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< Updated upstream
 using static UnityEditor.Progress;
+=======
+>>>>>>> Stashed changes
 
 public class ChestScript : MonoBehaviour
 {

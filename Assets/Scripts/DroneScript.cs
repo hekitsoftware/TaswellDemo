@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading;
-using Unity.VisualScripting;
 
 public class DroneScript : MonoBehaviour
 {

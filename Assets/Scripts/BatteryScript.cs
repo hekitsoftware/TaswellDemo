@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering;
 
 public class BatteryScript : MonoBehaviour
 {

@@ -1,8 +1,12 @@
+<<<<<<< Updated upstream
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+=======
+using UnityEngine;
+>>>>>>> Stashed changes
 
 public class ItemObject : MonoBehaviour
 {

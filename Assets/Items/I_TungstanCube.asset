@@ -17,7 +17,7 @@ MonoBehaviour:
   itemSprite: {fileID: 21300000, guid: e223324e3fedfc94eb91bbeee6400be7, type: 3}
   Rarity: 2
   GrowthCurve: 1
-  dropChance: 50.3
+  dropChance: 32.1
   HP: 2
   SPEED: 0
   DMG: 0
